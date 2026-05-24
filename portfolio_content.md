@@ -135,9 +135,9 @@
 
 ## Контакты
 
-**Telegram (личный):** https://t.me/Serg_310
+**Telegram (личный):** https://t.me/sergei_aminskii
 **Telegram (канал):** https://t.me/data_stroy
-**Email:** art56000@yandex.ru
-**GitHub:** https://github.com/brubon4
+**Email:** sergei.aminskii@gmail.com
+**GitHub:** https://github.com/sergei-aminskii
 
 Открыт к интересным проектам в области BI и аналитики данных. Консалтинг и проектная занятость. Работаю удалённо из Турции.
