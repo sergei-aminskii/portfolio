@@ -153,6 +153,14 @@
   .lang-btn.active { color: var(--accent); }
   .lang-btn:hover:not(.active) { color: var(--text); }
 
+  .pain { background: var(--bg2); }
+  .pain-list { list-style: none; padding: 0; margin: 40px 0; max-width: 760px; display: flex; flex-direction: column; gap: 14px; }
+  .pain-item { padding: 20px 24px 20px 52px; background: var(--bg3); border: 1px solid var(--border); border-left: 3px solid var(--accent2); border-radius: 2px; font-size: 15px; line-height: 1.7; color: var(--text-dim); position: relative; }
+  .pain-item::before { content: '—'; position: absolute; left: 18px; top: 20px; color: var(--accent2); font-weight: 700; font-size: 17px; }
+  .pain-cta { font-size: 17px; color: var(--text); font-weight: 500; margin-top: 8px; }
+  .pain-cta a { color: var(--accent); text-decoration: none; border-bottom: 1px solid oklch(62% 0.16 210 / 0.4); transition: border-color 0.2s; }
+  .pain-cta a:hover { border-color: var(--accent); }
+
   @media (max-width: 900px) {
     nav { padding: 16px 24px; flex-direction: column; align-items: flex-start; gap: 10px; }
     .lang-switch { position: absolute; top: 18px; right: 24px; }
@@ -189,6 +197,7 @@
     <a href="#ai-tools" data-i18n="nav-ai">AI-инструменты</a>
     <a href="#objects" data-i18n="nav-objects">Проекты</a>
     <a href="#education" data-i18n="nav-education">Образование</a>
+    <a href="#pain" data-i18n="nav-pain">Узнали себя?</a>
     <a href="#contact" data-i18n="nav-contact">Контакты</a>
   </div>
   <div class="lang-switch">
@@ -748,6 +757,20 @@
   </div>
 </section>
 
+<!-- PAIN -->
+<section class="pain" id="pain">
+  <div class="section-tag" data-i18n="pain-tag">Узнаёте ситуацию?</div>
+  <div class="section-title" data-i18n="pain-title">Узнали<br><em>себя?</em></div>
+  <ul class="pain-list">
+    <li class="pain-item" data-i18n="pain1">Каждый отдел ведёт данные по-своему — форматы разные, часть таблиц заброшена или потеряна после ухода сотрудника, свести всё воедино не представляется возможным</li>
+    <li class="pain-item" data-i18n="pain2">Опечатка в одной ячейке, путаница кириллицы и латиницы, пробелы — и формула считает неверно, никто не замечает</li>
+    <li class="pain-item" data-i18n="pain3">Данные заполняются от случая к случаю: важные поля игнорируются, цифры теряются ещё на этапе ввода, нет системности</li>
+    <li class="pain-item" data-i18n="pain4">Нужна срочная сводка по объекту — начинается ручная сборка до полуночи</li>
+    <li class="pain-item" data-i18n="pain5">Руководитель не видит реальной картины — имеющимся цифрам не доверяют, решения принимаются на ощущениях</li>
+  </ul>
+  <p class="pain-cta" data-i18n="pain-cta">Если хотя бы один пункт про вас — <a href="#contact">пишите</a></p>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner">
@@ -853,7 +876,7 @@
   var revealIO = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('revealed'); revealIO.unobserve(e.target); } });
   }, {threshold:0.08, rootMargin:'0px 0px -30px 0px'});
-  ['.exp-item','.obj-card','.skill-group','.ai-card','.ana-value-item','.edu-item','.stack-item'].forEach(function(sel){
+  ['.exp-item','.obj-card','.skill-group','.ai-card','.ana-value-item','.edu-item','.stack-item','.pain-item'].forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(el,i){
       el.classList.add('to-reveal');
       el.style.transitionDelay = Math.min(i*0.07, 0.21)+'s';
@@ -942,6 +965,7 @@ var T={
 'nav-ai':{ru:'AI-инструменты',en:'AI Tools'},
 'nav-objects':{ru:'Проекты',en:'Projects'},
 'nav-education':{ru:'Образование',en:'Education'},
+'nav-pain':{ru:'Узнали себя?',en:'Sound Familiar?'},
 'nav-contact':{ru:'Контакты',en:'Contact'},
 'hero-tag':{ru:'BI-аналитик в строительстве',en:'BI Analyst in Construction'},
 'hero-role':{ru:'Data Analyst · Power BI · 14 лет опыта',en:'Data Analyst · Power BI · 14 years experience'},
@@ -1136,6 +1160,14 @@ var T2={
 'edu2-date':{ru:'<strong>2008</strong>СПО',en:'<strong>2008</strong>Vocational'},
 'edu2-degree':{ru:'Специалист среднего звена',en:'Associate specialist'},
 'edu2-inst':{ru:'ГОУ СПО «Оренбургский колледж статистики, экономики и информатики»',en:'Orenburg College of Statistics, Economics and Informatics'},
+'pain-tag':{ru:'Узнаёте ситуацию?',en:'Does this sound familiar?'},
+'pain-title':{ru:'Узнали<br><em>себя?</em>',en:'Sound<br><em>familiar?</em>'},
+'pain1':{ru:'Каждый отдел ведёт данные по-своему — форматы разные, часть таблиц заброшена или потеряна после ухода сотрудника, свести всё воедино не представляется возможным',en:'Every department manages data differently — formats vary, some spreadsheets are abandoned or lost when an employee leaves, and consolidating everything seems impossible'},
+'pain2':{ru:'Опечатка в одной ячейке, путаница кириллицы и латиницы, пробелы — и формула считает неверно, никто не замечает',en:'A typo in one cell, mixed Cyrillic and Latin characters, stray spaces — and the formula calculates incorrectly, nobody notices'},
+'pain3':{ru:'Данные заполняются от случая к случаю: важные поля игнорируются, цифры теряются ещё на этапе ввода, нет системности',en:'Data is entered sporadically: important fields are ignored, numbers are lost at the input stage, no system in place'},
+'pain4':{ru:'Нужна срочная сводка по объекту — начинается ручная сборка до полуночи',en:'An urgent project summary is needed — and a midnight manual data collection session begins'},
+'pain5':{ru:'Руководитель не видит реальной картины — имеющимся цифрам не доверяют, решения принимаются на ощущениях',en:'Management can\'t see the real picture — the existing numbers aren\'t trusted, decisions are made on gut feeling'},
+'pain-cta':{ru:'Если хотя бы один пункт про вас — <a href="#contact">пишите</a>',en:'If even one of these sounds familiar — <a href="#contact">let\'s talk</a>'},
 'contact-tag':{ru:'Контакты',en:'Contact'},
 'contact-email-label':{ru:'Письмо на email',en:'Send email'},
 'contact-title':{ru:'Открыт к амбициозным<br><em>проектам в BI / Data / AI-аналитике</em>',en:'Open to ambitious<br><em>projects in BI / Data / AI analytics</em>'},
