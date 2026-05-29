@@ -797,7 +797,7 @@
 </section>
 
 <footer>
-  <div data-i18n="footer-copy">© 2026 Аминский Сергей Сергеевич</div>
+  <div data-i18n="footer-copy">© 2026 Сергей Аминский</div>
   <div data-i18n="footer-role">BI-аналитик</div>
 </footer>
 
@@ -1173,7 +1173,7 @@ var T2={
 'contact-title':{ru:'Открыт к амбициозным<br><em>проектам в BI / Data / AI-аналитике</em>',en:'Open to ambitious<br><em>projects in BI / Data / AI analytics</em>'},
 'contact-subtitle':{ru:'Открыт к интересным проектам в области BI и аналитики данных. Консалтинг и проектная занятость. Работаю удалённо из Турции.',en:'Open to interesting projects in BI and data analytics. Consulting and project-based engagement. Working remotely from Turkey.'},
 'contact-avail':{ru:'Открыт к новым предложениям',en:'Open to new opportunities'},
-'footer-copy':{ru:'© 2026 Аминский Сергей Сергеевич',en:'© 2026 Sergey Aminsky'},
+'footer-copy':{ru:'© 2026 Сергей Аминский',en:'© 2026 Sergei Aminskii'},
 'footer-role':{ru:'BI-аналитик',en:'BI Analyst'},
 'cf-btn':{ru:'Отправить',en:'Send'},
 'cf-ok':{ru:'Сообщение отправлено — свяжусь в течение 24 часов.',en:'Message sent — I will get back to you within 24 hours.'},
@@ -1183,7 +1183,7 @@ Object.assign(window._T, T2);
 
 function applyLang(lang){
   document.documentElement.lang=lang;
-  document.title=lang==='en'?'Sergey Aminsky — BI Analyst':'Аминский Сергей — BI-аналитик';
+  document.title=lang==='en'?'Sergei Aminskii — BI Analyst':'Сергей Аминский — BI-аналитик';
   document.querySelectorAll('[data-i18n]').forEach(function(el){
     var k=el.getAttribute('data-i18n');
     if(window._T[k]&&window._T[k][lang]!==undefined) el.innerHTML=window._T[k][lang];
