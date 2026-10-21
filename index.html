@@ -1227,7 +1227,7 @@ document.querySelectorAll('.lang-btn').forEach(function(btn){
   btn.addEventListener('click',function(){ applyLang(this.getAttribute('data-lang')); });
 });
 
-try{var saved=localStorage.getItem('lang'); if(saved&&saved!=='ru') applyLang(saved); else updateExpDuration('ru');}catch(e){updateExpDuration('ru');}
+try{var saved=localStorage.getItem('lang'); applyLang(saved||'ru');}catch(e){applyLang('ru');}
 })();
 </script>
 </body></html>
